@@ -6,6 +6,9 @@
     "codexten/yii-web": "~2.0",
     "mult1mate/cron-manager": "*"
   },
+  "require-dev": {
+    "codeception/codeception": "*"
+  },
   "autoload": {
     "psr-4": {
       "codexten\\yii\\pdf\\": "src"
