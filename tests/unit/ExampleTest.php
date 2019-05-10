@@ -1,5 +1,6 @@
 <?php
 
+
 class ExampleTest extends \Codeception\Test\Unit
 {
     /**
@@ -34,25 +35,22 @@ class ExampleTest extends \Codeception\Test\Unit
     {
         $loader = new Nelmio\Alice\Loader\NativeLoader();
         $objectSet = $loader->loadData([
-            \Nelmio\Entity\User::class => [
+            stdClass::class => [
                 'user{1..10}' => [
-                    'username' => '<username()>',
+                    'name' => '<username()>',
                     'fullname' => '<firstName()> <lastName()>',
                     'birthDate' => '<date_create()>',
                     'email' => '<email()>',
                     'favoriteNumber' => '50%? <numberBetween(1, 200)>',
                 ],
             ],
-            \Nelmio\Entity\Group::class => [
-                'group1' => [
-                    'name' => 'Admins',
-                    'owner' => '@user1',
-                    'members' => '<numberBetween(1, 10)>x @user*',
-                    'created' => '<dateTimeBetween("-200 days", "now")>',
-                    'updated' => '<dateTimeBetween($created, "now")>',
-                ],
-            ],
-        ]);
+        ])->getObjects();
+        foreach ($objectSet as $object) {
+            echo '<pre>';
+            var_dump($object);
+            echo '</pre>';
+        }
+        exit;
 
     }
 }
