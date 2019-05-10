@@ -1,0 +1,24 @@
+{
+  "name": "codexten/yii-pdf",
+  "type": "library",
+  "description": "PDF",
+  "require": {
+    "codexten/yii-web": "~2.0",
+    "mult1mate/cron-manager": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "codexten\\yii\\pdf\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    },
+    "sconfig-plugin": {
+      "cron": "config/cron.php",
+      "console": "config/console.php",
+      "migrationNamespaces": "config/migrationNamespaces.php"
+    }
+  }
+}
