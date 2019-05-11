@@ -1,9 +1,19 @@
 <?php
+
 if (!defined('ROOT_DIR')) {
-    define('ROOT_DIR', '/projects/kozmosz');
+    define('ROOT_DIR', getcwd());
 }
 
-$bootstrap = ROOT_DIR . '/vendor/autoload.php';
+use hiqdev\composer\config\Builder;
+use yii\console\Application;
+
+require ROOT_DIR . '/config/bootstrap.php';
 
 
-require_once $bootstrap;
+if (YII_ENV === 'dev') {
+    hiqdev\composer\config\Builder::rebuild();
+}
+
+$config = require Builder::path('testPdf');
+
+(new Application($config));

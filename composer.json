@@ -3,8 +3,7 @@
   "type": "library",
   "description": "PDF",
   "require": {
-    "codexten/yii-web": "~2.0",
-    "mult1mate/cron-manager": "*"
+    "yii2tech/html2pdf": "*"
   },
   "autoload": {
     "psr-4": {
@@ -15,10 +14,13 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
-      "cron": "config/cron.php",
-      "console": "config/console.php",
-      "migrationNamespaces": "config/migrationNamespaces.php"
+    "config-plugin": {
+      "pdf": "config/pdf.php",
+      "testPdf": [
+        "$base",
+        "$pdf",
+        "config/testPdf.php"
+      ]
     }
   }
 }
