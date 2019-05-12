@@ -19,7 +19,7 @@
   "autoload": {
     "psr-4": {
       "codexten\\yii\\pdf\\": "src",
-      "codexten\\yii\\pdf\\tests": "tests"
+      "codexten\\yii\\pdf\\tests\\": "tests"
     }
   },
   "extra": {
