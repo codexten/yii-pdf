@@ -6,6 +6,16 @@ if (!defined('ROOT_DIR')) {
     define('ROOT_DIR', getcwd());
 }
 
+
+if (!defined('VENDOR_DIR')) {
+    foreach ([ROOT_DIR . '/vendor'] as $dir) {
+        if (file_exists($dir . '/autoload.php')) {
+            define('VENDOR_DIR', $dir);
+            break;
+        }
+    }
+}
+
 require_once(ROOT_DIR . '/vendor/autoload.php');
 require_once(ROOT_DIR . '/vendor/yiisoft/yii2/Yii.php');
 
