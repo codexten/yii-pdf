@@ -1,7 +1,6 @@
 
 
 #Codeception specific
-tests/_data/*
 tests/_log/*
 tests/_output/*
 
