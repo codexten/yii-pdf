@@ -7,7 +7,7 @@
     "dompdf/dompdf": "*"
   },
   "require-dev": {
-    "codexten/yii-pdf": "^2.0.0"
+    "codexten/yii-dev": "^2.0.0"
   },
   "autoload": {
     "psr-4": {
