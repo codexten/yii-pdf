@@ -36,6 +36,5 @@ HTML;
         Yii::$app->html2pdf
             ->convert($html)
             ->saveAs(__DIR__.'/../_output.test.pdf');
-
     }
 }

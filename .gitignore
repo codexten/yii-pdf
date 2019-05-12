@@ -3,3 +3,5 @@
 #Codeception specific
 tests/_data/*
 tests/_log/*
+
+vendor

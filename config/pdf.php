@@ -5,7 +5,9 @@ return [
         'html2pdf' => [
             'class' => 'yii2tech\html2pdf\Manager',
             'viewPath' => '@app/pdf',
-            'converter' => 'wkhtmltopdf',
+            'converter' => [
+                'class' => 'yii2tech\html2pdf\converters\Dompdf',
+            ],
         ],
     ],
 ];
