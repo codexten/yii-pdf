@@ -1,6 +1,7 @@
 <?php
 
 use hiqdev\composer\config\Builder;
+use yii\console\Application;
 
 if (!defined('ROOT_DIR')) {
     define('ROOT_DIR', getcwd());
@@ -26,7 +27,7 @@ hiqdev\composer\config\Builder::rebuild();
 
 $config = require Builder::path('testPdf');
 
-$app = new \yii\console\Application($config);
+$app = new Application($config);
 
 //if (!defined('ROOT_DIR')) {
 //    define('ROOT_DIR', getcwd());

@@ -1,9 +1,11 @@
 <?php
 
-class PdfTest extends \Codeception\Test\Unit
+use Codeception\Test\Unit;
+
+class PdfTest extends Unit
 {
     /**
-     * @var \UnitTester
+     * @var UnitTester
      */
     protected $tester;
 
@@ -22,31 +24,37 @@ class PdfTest extends \Codeception\Test\Unit
 
     public function testSamplePdf()
     {
-        $html = <<<HTML
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-<p>Simple Pdf Test</p>
-</body>
-</html>
-HTML;
-        $saveFile = __DIR__ . '/../_output/samplePdf.pdf';
+        $saveFile = $this->getOutputFilePath('sample-pdf.pdf');
+
         if (file_exists($saveFile)) {
             unlink($saveFile);
         }
+        $this->assertTrue(
+            Yii::$app->html2pdf
+                ->convert(file_get_contents(Yii::getAlias('@codexten/yii/pdf/tests/_data/pdf/sample.html')))
+                ->saveAs($saveFile)
+        );
+        $this->assertTrue(file_exists($saveFile), "{$saveFile} Not Found");
+    }
 
-        $this->assertTrue(Yii::$app->html2pdf
-            ->convert($html)
-            ->saveAs($saveFile));
+    public function testRenderView()
+    {
+        $saveFile = $this->getOutputFilePath('invoice.pdf');
 
-        $this->assertTrue(file_exists($saveFile),"{$saveFile} Not Found");
+        if (file_exists($saveFile)) {
+            unlink($saveFile);
+        }
+        $this->assertTrue(
+            Yii::$app->html2pdf
+                ->render('invoice', ['name' => 'John'])
+                ->saveAs($saveFile)
+        );
+        $this->assertTrue(file_exists($saveFile), "{$saveFile} Not Found");
+    }
 
-// convert HTML file to PDF file :
-//        Yii::$app->html2pdf
-//            ->convertFile('/path/to/source.html')
-//            ->saveAs('/path/to/output.pdf');
+    protected function getOutputFilePath($fileName)
+    {
+        return Yii::getAlias("@runtime/{$fileName}");
     }
 
 }
