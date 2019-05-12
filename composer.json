@@ -4,7 +4,7 @@
   "description": "PDF",
   "require": {
     "yii2tech/html2pdf": "*",
-    "dompdf/dompdf": "~7.0.0"
+    "dompdf/dompdf": "*"
   },
   "autoload": {
     "psr-4": {
