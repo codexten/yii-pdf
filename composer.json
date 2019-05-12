@@ -6,9 +6,16 @@
     "yii2tech/html2pdf": "*",
     "dompdf/dompdf": "*"
   },
+  "minimum-stability": "dev",
   "require-dev": {
     "codexten/yii-dev": "^2.0.0"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "codexten\\yii\\pdf\\": "src"
