@@ -1,10 +1,15 @@
 <?php
+/**
+ * @var $params array
+ */
+
+use codexten\yii\pdf\PdfManager;
 
 return [
     'components' => [
-        'html2pdf' => [
-            'class' => 'yii2tech\html2pdf\Manager',
-            'viewPath' => '@app/pdf',
+        'pdfManager' => [
+            'class' => PdfManager::class,
+            'viewPath' => $params['pdfManager.viewPath'],
             'converter' => [
                 'class' => 'yii2tech\html2pdf\converters\Dompdf',
             ],

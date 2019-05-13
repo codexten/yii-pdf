@@ -27,11 +27,12 @@
       "dev-master": "2.0.x-dev"
     },
     "config-plugin": {
+      "params": "config/params.php",
       "pdf": "config/pdf.php",
       "testPdf": [
         "$base",
         "$pdf",
-        "config/testPdf.php"
+        "tests/config/testPdf.php"
       ]
     }
   }

@@ -19,7 +19,7 @@ class PdfTest extends Unit
 
     public function testGetProperty()
     {
-        $this->assertTrue(Yii::$app->has('html2pdf'));
+        $this->assertTrue(Yii::$app->has('pdfManager'));
     }
 
     public function testSamplePdf()
@@ -30,7 +30,7 @@ class PdfTest extends Unit
             unlink($saveFile);
         }
         $this->assertTrue(
-            Yii::$app->html2pdf
+            Yii::$app->pdfManager
                 ->convert(file_get_contents(Yii::getAlias('@codexten/yii/pdf/tests/_data/pdf/sample.html')))
                 ->saveAs($saveFile)
         );
@@ -45,7 +45,7 @@ class PdfTest extends Unit
             unlink($saveFile);
         }
         $this->assertTrue(
-            Yii::$app->html2pdf
+            Yii::$app->pdfManager
                 ->render('invoice', ['name' => 'John'])
                 ->saveAs($saveFile)
         );

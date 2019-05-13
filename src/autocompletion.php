@@ -1,10 +1,10 @@
 <?php
 
-use yii\base\Application;
+use codexten\yii\pdf\PdfManager;
 
 
 /**
- * @property \yii2tech\html2pdf\Manager $html2pdf
+ * @property PdfManager $pdfManager
  */
 abstract class BaseApplication extends yii\base\Application
 {
