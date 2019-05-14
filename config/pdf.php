@@ -4,7 +4,7 @@
  */
 
 use codexten\yii\pdf\PdfManager;
-use yii2tech\html2pdf\converters\Tcpdf;
+use yii2tech\html2pdf\converters\Dompdf;
 
 return [
     'components' => [
@@ -12,7 +12,7 @@ return [
             'class' => PdfManager::class,
             'viewPath' => isset($params['pdfManager.viewPath']) ? $params['pdfManager.viewPath'] : '',
             'converter' => [
-                'class' => Tcpdf::class,
+                'class' => Dompdf::class,
             ],
         ],
     ],

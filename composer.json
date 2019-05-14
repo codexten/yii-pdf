@@ -4,7 +4,7 @@
   "description": "PDF",
   "require": {
     "yii2tech/html2pdf": "*",
-    "tecnickcom/tcpdf": "*"
+    "dompdf/dompdf": "*"
   },
   "minimum-stability": "dev",
   "require-dev": {
