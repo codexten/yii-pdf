@@ -12,7 +12,7 @@ return [
             'class' => PdfManager::class,
             'viewPath' => isset($params['pdfManager.viewPath']) ? $params['pdfManager.viewPath'] : '',
             'converter' => [
-                'class' => \yii2tech\html2pdf\converters\Mpdf::class,
+                'class' => Dompdf::class,
             ],
         ],
     ],
