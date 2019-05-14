@@ -10,7 +10,7 @@ return [
     'components' => [
         'pdfManager' => [
             'class' => PdfManager::class,
-            'viewPath' => $params['pdfManager.viewPath'],
+            'viewPath' => $params['pdfManager.viewPath'] ?:'',
             'converter' => [
                 'class' => Tcpdf::class,
             ],
